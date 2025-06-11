@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Shield</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+        body {
+        background-color: #0b1120;
+        color: #e2e8f0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        border-bottom: 1px solid #334155;
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-brand {
+        color: #f1f5f9;
+        font-weight: 700;
+        font-size: 1.6rem;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+        color: #38bdf8;
+    }
+
+    .navbar-nav .nav-link {
+        color: #cbd5e1;
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #0ef;
+        transform: scale(1.05);
+        text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+    }
+
+    .navbar-toggler {
+        border-color: #64748b;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e2e8f0' viewBox='0 0 30 30'%3E%3Cpath d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    h4{
+      color: #7dd3fc;
+    }
+    .dropdown-toggle,
+    .dropdown-toggle:focus,
+    .dropdown-toggle:active,
+    .show > .dropdown-toggle {
+      color: #cbd5e1 !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+
+    /* Container Styling */
+    .container-custom {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #1e293b;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(100, 200, 255, 0.1);
+    }
+
+    /* Carousel */
+    .carousel-item {
+        height: 600px;
+        position: relative;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        bottom: 15%;
+        left: 10%;
+        right: 10%;
+        background-color: rgba(15, 23, 42, 0.85);
+        padding: 20px;
+        border-radius: 12px;
+        color: #e2e8f0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Feature Section */
+    #hanging-icons h2 {
+        color: #7dd3fc;
+    }
+
+    .icon-square {
+        background-color: #0f172a;
+        border-radius: 12px;
+        padding: 10px;
+        transition: transform 0.2s ease;
+    }
+
+    .icon-square:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px rgba(110, 182, 255, 0.4);
+    }
+
+    .btn-primary {
+        background-color: #2563eb;
+        border-color: #2563eb;
+    }
+
+    .btn-primary:hover {
+        background-color: #1d4ed8;
+        border-color: #1d4ed8;
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+        color: #7dd3fc;
+    }
+
+    a {
+        color: #38bdf8;
+        text-decoration: none;
+    }
+
+
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #1e293b;
+        color: #94a3b8;
+        font-size: 0.95rem;
+        border-top: 1px solid #334155;
+    }
+
+  </style>
+</head>
+<body>
+ 
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <h4>Threat Shield</h4>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="./about">About Us</a>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Features
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+<a class="dropdown-item" href="{{ url_for('images') }}">Image Threat Detection</a>
+<a class="dropdown-item" href="{{ url_for('links') }}">URL Threat Detection</a>
+<a class="dropdown-item" href="{{ url_for('texts') }}">Text Threat Detection</a>
+            </ul>
+          </li>
+  
+          <li class="nav-item">
+<a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <header class="text-center my-5">
+    <h1>Welcome to Threat Shield</h1>
+    <p>Protect yourself from scams, phishing attempts, and harassment messages with real-time detection and alerts.</p>
+  </header>
+
+  <div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+<img src="{{ url_for('static', filename='carousel-1.jpg') }}" alt="Protection from Phishing">
+        <div class="carousel-caption">
+          <h3>Real-Time Phishing Detection</h3>
+          <p>Stay protected from harmful links and fake websites.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+<img src="{{ url_for('static', filename='carousel-2.jpg') }}" alt="Harassment Prevention">
+        <div class="carousel-caption">
+          <h3>Harassment Message Detection</h3>
+          <p>Identify and block harmful or abusive messages instantly.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+<img src="{{ url_for('static', filename='carousel-3.jpg') }}" alt="Alert System">
+        <div class="carousel-caption">
+          <h3>Spam Text Detection</h3>
+          <p>Paste your message. We'll tell you if it's safe.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <div class="container px-4 py-5" id="hanging-icons">
+    <h2 id="features" class=" pb-2 border-bottom">Security Analysis Features</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+
+      <div class="col d-flex align-items-start">
+        <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#6EB6FF" class="bi bi-image" viewBox="0 0 16 16">
+            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+            <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 style="color: #6EB6FF;">Image Threat Detection</h3>
+          <p>Scans uploaded images for harmful or inappropriate content.</p>
+<a href="{{ url_for('images') }}" class="btn btn-primary">Upload Image</a>
+        </div>
+      </div>
+
+      <div class="col d-flex align-items-start">
+        <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#6EB6FF" class="bi bi-link-45deg" viewBox="0 0 16 16">
+            <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 style="color: #6EB6FF;">URL Threat Detection</h3>
+          <p>Inspects URLs for phishing attempts, malware, or malicious content.</p>
+<a href="{{ url_for('links') }}" class="btn btn-primary">Analyze URL</a>
+        </div>
+      </div>
+
+      <div class="col d-flex align-items-start">
+        <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#6EB6FF" class="bi bi-chat-text-fill" viewBox="0 0 16 16">
+            <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M4.5 5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 style="color: #6EB6FF;">Text Threat Detection</h3>
+          <p>Analyzes messages to detect abusive or phishing content.</p>
+<a href="{{ url_for('texts') }}" class="btn btn-primary">Analyze Text</a>
+        </div>
+      </div>
+      
+    </div>
+</div>
+
+
+  <footer>
+    <p>&copy; 2025 Cyber Threat Protection | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
