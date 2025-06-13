@@ -1,0 +1,22 @@
+# Core ML and deep learning
+tensorflow
+keras
+
+# OCR
+pytesseract
+Pillow
+
+# Data handling
+numpy
+
+# Web framework (choose one; Flask is common)
+Flask
+
+# If you use scikit-learn for preprocessing or evaluation
+scikit-learn
+
+# If you use OpenCV for image processing (optional)
+opencv-python
+
+# If you use pandas for data manipulation (optional)
+pandas
